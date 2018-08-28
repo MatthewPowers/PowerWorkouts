@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:fragment="head">
+    <meta charset="UTF-8"/>
+    <title th:text="${title}">Power Workouts</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" th:src="@{/JS/script.js}" ></script>
+
+    <script type="text/javascript" th:src="@{/JS/SubmitValidation.js}" ></script>
+</head>
+<body>
+
+<div th:fragment="pageHead" id="pageTitle" class="container-flued text-center">
+    <h1 th:text="${title}">Power Work Outs</h1>
+</div>
+
+<!-- -----Navagation Bar start----- -->
+
+<div th:fragment="navigation" class="navBar">
+
+    <a href="/PowerWorkouts"><button class="homebtn">Home</button></a>
+
+    <div class="dropdown1">
+        <button class="dropbtn1">Exercise</button>
+        <div class="dropdown-content1">
+            <a href="/PowerWorkouts/workouts">Work Out Plans</a>
+            <a href="/PowerWorkouts/exerciseList">Exercises</a>
+        </div>
+    </div>
+
+    <a href="/PowerWorkouts/login"><button class="logbtn">Login</button></a>
+    <a href="/PowerWorkouts/logout"><button class="logbtn">Logout</button></a>
+
+
+
+</div>
+<!-- -----Navagation Bar end----- -->
+
+
+<div th:text="${userName}"></div>
+
+</body>
+</html>

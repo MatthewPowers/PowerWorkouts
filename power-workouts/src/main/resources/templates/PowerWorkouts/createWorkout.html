@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+
+<!-- <h1 th:text="${title}"></h1> -->
+<div th:replace="fragments :: pageHead"></div>
+
+<div th:replace="fragments :: navigation"></div>
+
+<br/>
+
+
+        <!--put form into a table -->
+
+<form method = "post" >
+    <label >Workout Name</label>
+    <input type="text" name="workoutName" th:value="${workoutNameHolder}"/>
+
+    <label >Workout Description</label>
+    <input type="text" name="workoutDescription" th:value="${workoutDiscriptionHolder}"/>
+
+<table class="center">
+
+    <tr>
+        <th>Exercises</th>
+        <th>Sets</th>
+        <th>Reps</th>
+    </tr>
+    <tr>
+        <th>
+        <select class="form-control" name="example" id="exampless">
+            <option value="exerciseDropdown" th:each="listExercise : ${exercises}"
+                    th:value="${listExercise.id}"
+                    th:text="${listExercise.exerciseName}">
+            </option>
+        </select>
+        </th>
+        <th>
+        <input type="text" name="sets"/>
+        </th>
+        <th>
+        <input type="text" name="reps"/>
+        </th>
+    </tr>
+
+</table>
+    <input type="submit" name="action" value="Add next Exercise" />
+
+    <br>
+<input type="submit" name="action" value="Create Workout" />
+</form>
+
+
+<!-- display exercises that have been added to workout -->
+
+
+<!--
+<table class="table">
+
+    <tr>
+        <th>ID</th>
+        <th>Exercise</th>
+    </tr>
+
+    <tr th:each="curExercise : ${exercises}">
+        <td th:text="${curExercise.Id}"></td>
+        <td th:text="${curExercise.exerciseName}"></td>
+    </tr>
+</table>
+-->
+
+</body>
+</html>

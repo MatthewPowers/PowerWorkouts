@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+
+<!-- <h1 th:text="${title}"></h1> -->
+<div th:replace="fragments :: pageHead"></div>
+
+<div th:replace="fragments :: navigation"></div>
+
+<br/>
+
+<!--  test form multipule submits-->
+<form method = "post">
+    <label >Workout Name</label>
+    <input th:value="${workoutNameHolder}" type="text" name="workoutName"  />
+
+    <!--
+    <label >Workout Description</label>
+    <input th:value="${workoutDiscriptionHolder}" type="text" name="workoutDescription"/>
+    -->
+
+    <br/>
+    <p>add exercises to your workout</p>
+
+    <label >Exercise</label>
+    <input type="text" name="exerciseName"/>
+
+    <label >Number of Sets</label>
+    <input type="text" name="sets"/>
+
+    <label >Number of Reps</label>
+    <input type="text" name="reps"/>
+
+    <input type="submit" name="action" value="Add Exercise" />
+
+    <br/>
+
+    <input type="submit" name="action" value="Create Workout" />
+
+
+    <div th:each="exercise : ${exercises}" class="checkbox">
+        <input type="checkbox" name="exerciseIds" th:value="${exercise.Id}" th:id="exercise.Id" />
+        <label th:text="${exercise.exerciseName}"></label>
+        <br/>
+    </div>
+</form>
+
+<br/>
+
+</body>
+</html>

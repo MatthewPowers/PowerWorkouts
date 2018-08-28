@@ -1,0 +1,290 @@
+body
+{
+    background-color: rgb(235, 235, 235);
+    text-align: center;
+}
+
+#toolBar
+{
+    background-color: lightblue;
+    font-size: 20px;
+}
+
+#pageTitle
+{
+    background-color: rgb(88, 201, 88);
+    color: red;
+    text-decoration: underline;
+    text-shadow: 2px 1px rgba(255, 0, 0, 0.750);
+}
+
+h1
+{
+    font-size: 50px;
+}
+
+
+
+/*-----Nav bar-----*/
+.navBar
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+
+}
+
+.dropdown1
+{
+    position: relative;
+    display: inline-block;
+
+}
+
+.dropbtn1
+{
+    background-color: #333;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown1 .dropbtn1:hover
+{
+    background-color: rgb(25, 25, 25);
+}
+
+.logbtn
+{
+    /* float: right; */
+    background-color: #333;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.logbtn:hover
+{
+    background-color: rgb(25, 25, 25);
+}
+
+.dropdown1 .dropdown-content1
+{
+    display: none;
+    position: absolute;
+    background-color: #cccccc;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown1 .dropdown-content1 a
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    float: left;
+}
+
+.dropdown1:hover .dropdown-content1
+{
+    display: block;
+}
+
+.dropdown-content1 a:hover
+{
+    background-color: #bbbbbb
+}
+
+.homebtn
+{
+    background-color: #333;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.homebtn:hover
+{
+    background-color: rgb(25, 25, 25);
+}
+
+/*-----End Nav bar-----*/
+
+table
+{
+    width: 30%;
+    margin: auto;
+
+    display: block;
+    align: center;
+    text-align: center;
+
+}
+
+table.center
+{
+    margin-left:auto;
+    margin-right:auto;
+}
+
+tr
+{
+    align: center;
+    text-align: center;
+}
+td
+{
+    align: center;
+    text-align: center;
+
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+}
+th
+{
+    align: center;
+    text-align: center;
+}
+
+/*-----News styling-----*/
+
+#newsTitle
+{
+    text-decoration: underline;
+    text-shadow: 2px 1px rgba(87, 185, 247, 0.75);
+}
+
+#newsBox
+{
+    background-color: rgb(211, 211, 211);
+    border: 1px solid black;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    width: 65%;
+
+    margin-top: 10px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
+    margin: auto;
+}
+
+.dropDown
+{
+    width: 150px;
+}
+WOTable
+
+
+
+/*
+rgb(88, 201, 88)
+
+
+
+table.WOTable {
+  font-family: "Times New Roman", Times, serif;
+  width: 450px;
+  height: 300px;
+  text-align: left;
+  border-collapse: collapse;
+}
+table.WOTable td, table.WOTable th {
+  border: 1px solid #FFFFFF;
+  padding: 3px 2px;
+}
+table.WOTable tbody td {
+  font-size: 13px;
+}
+table.WOTable tr:nth-child(even) {
+  background: rgb(88, 201, 88);
+}
+table.WOTable thead {
+  background: #0B6FA4;
+  border-bottom: 5px solid #FFFFFF;
+}
+table.WOTable thead th {
+  font-size: 17px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+  border-left: 2px solid #FFFFFF;
+}
+table.WOTable thead th:first-child {
+  border-left: none;
+}
+
+table.WOTable tfoot {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333333;
+  background: #D0E4F5;
+}
+table.WOTable tfoot td {
+  font-size: 14px;
+}
+*/
+
+
+
+
+
+/*
+table.paleBlueRows {
+  font-family: "Times New Roman", Times, serif;
+  width: 350px;
+  height: 200px;
+  text-align: left;
+  border-collapse: collapse;
+}
+table.paleBlueRows td, table.paleBlueRows th {
+  border: 1px solid #FFFFFF;
+  padding: 3px 2px;
+}
+table.paleBlueRows tbody td {
+  font-size: 13px;
+}
+table.paleBlueRows tr:nth-child(even) {
+  background: #D0E4F5;
+}
+table.paleBlueRows thead {
+  background: #0B6FA4;
+  border-bottom: 5px solid #FFFFFF;
+}
+table.paleBlueRows thead th {
+  font-size: 17px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+  border-left: 2px solid #FFFFFF;
+}
+table.paleBlueRows thead th:first-child {
+  border-left: none;
+}
+
+table.paleBlueRows tfoot {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333333;
+  background: #D0E4F5;
+}
+table.paleBlueRows tfoot td {
+  font-size: 14px;
+}
+*/

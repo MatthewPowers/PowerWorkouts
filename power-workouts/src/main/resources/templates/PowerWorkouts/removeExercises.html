@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+
+<div th:replace="fragments :: pageHead"></div>
+
+<div th:replace="fragments :: navigation"></div>
+
+<br/>
+<br/>
+
+
+<form method = "post">
+    <div th:each="exercise : ${exercises}" class="checkbox">
+        <input type="checkbox" name="exerciseIds" th:value="${exercise.Id}" th:id="exercise.Id" />
+        <label th:text="${exercise.exerciseName}"></label>
+        <br/>
+    </div>
+    <input type="submit" value="Remove Exercise" />
+</form>
+
+
+
+</body>
+</html>

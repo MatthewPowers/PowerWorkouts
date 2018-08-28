@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+</head>
+<body>
+<div th:replace="fragments :: pageHead"></div>
+
+<div th:replace="fragments :: navigation"></div>
+<br/>
+
+
+<h2 th:text="${workouts.workoutName}"></h2>
+<br>
+<h4 th:text="${workouts.workoutDescription}"></h4>
+
+<br>
+
+<div th:text="${editWorkoutSetsError}"></div>
+<div th:text="${editWorkoutRepsError}"></div>
+
+<form method = "post" >
+
+<table class="center" id="table1">
+
+    <tr>
+        <td>Exercises</td>
+        <td>Sets</td>
+        <td>Reps</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>
+            <select class="form-control, dropDown" name="example" id="exampless">
+                <option value="exerciseDropdown" th:each="listExercise : ${exercisesList}"
+                        th:value="${listExercise.id}"
+                        th:text="${listExercise.exerciseName}">
+                </option>
+            </select>
+        </td>
+        <td>
+            <input type="text" name="sets"/>
+        </td>
+        <td>
+            <input type="text" name="reps"/>
+        </td>
+
+        <td>
+            <input class="btn btn-secondary" type="submit" name="action" value="Add next Exercise" />
+        </td>
+    </tr>
+
+
+    <tr>
+        <td>Exercises</td>
+        <td>Sets</td>
+        <td>Reps</td>
+        <td>&nbsp;</td>
+    </tr>
+
+
+    <tr th:each="SandR : ${SetsAndReps}">
+        <td th:text="${SandR.exerciseName}"></td>
+        <td th:text="${SandR.sets}"></td>
+        <td th:text="${SandR.reps}"></td>
+        <td>&nbsp;</td>
+    </tr>
+
+</table>
+
+</form>
+
+<br>
+
+
+</body>
+</html>

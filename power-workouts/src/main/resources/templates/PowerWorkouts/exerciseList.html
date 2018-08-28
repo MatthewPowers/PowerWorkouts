@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+
+    <div th:replace="fragments :: pageHead"></div>
+
+    <div th:replace="fragments :: navigation"></div>
+
+    <br>
+
+    <div th:text="${exerciseNameError}"></div>
+    <div th:text="${exerciseDescriptionError}"></div>
+
+    <form method = "post" >
+        <label >Exercise</label>
+        <input type="text" name="exerciseName" th:value="${exerciseNameHolder}"/>
+
+        <label >Exercise description</label>
+        <input type="text" name="description"/>
+
+        <input class="btn btn-secondary" type="submit" value="Add Exercise" />
+    </form>
+
+    <br><br>
+
+    <table class="table, center">
+
+        <tr>
+            <th>Exercise</th>
+            <th>description</th>
+        </tr>
+
+        <tr th:each="exercise : ${exercises}">
+            <td th:text="${exercise.exerciseName}"></td>
+            <td th:text="${exercise.description}"></td>
+        </tr>
+
+    </table>
+
+    <br><br>
+</body>
+</html>

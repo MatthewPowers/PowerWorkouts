@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+
+    <div th:replace="fragments :: pageHead"></div>
+    <div th:replace="fragments :: navigation"></div>
+
+    <br><br>
+
+    <div th:text="${error}"></div>
+
+    <div>
+        <form method="POST">
+            <table class="table, center">
+                <tr>
+                    <th>User Name: </th>
+                    <th><input type="text" name="userName"></th>
+                </tr>
+                <tr>
+                    <th>Password: </th>
+                    <th><input type="password" name="password"></th>
+                </tr>
+            </table>
+            <br>
+            <input class="btn btn-secondary" type="Submit" name="Login" value="Login">
+        </form>
+    </div>
+
+<br>
+
+    <a href="/PowerWorkouts/register" ><button class="btn btn-secondary active">Register</button></a>
+
+</body>
+</html>
