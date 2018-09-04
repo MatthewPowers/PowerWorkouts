@@ -3,7 +3,7 @@
 <head th:replace="fragments :: head"></head>
 <body>
 
-<!-- <h1 th:text="${title}"></h1> -->
+
 <div th:replace="fragments :: pageHead"></div>
 
 <div th:replace="fragments :: navigation"></div>
@@ -54,21 +54,6 @@
 
 <!-- display exercises that have been added to workout -->
 
-
-<!--
-<table class="table">
-
-    <tr>
-        <th>ID</th>
-        <th>Exercise</th>
-    </tr>
-
-    <tr th:each="curExercise : ${exercises}">
-        <td th:text="${curExercise.Id}"></td>
-        <td th:text="${curExercise.exerciseName}"></td>
-    </tr>
-</table>
--->
 
 </body>
 </html>

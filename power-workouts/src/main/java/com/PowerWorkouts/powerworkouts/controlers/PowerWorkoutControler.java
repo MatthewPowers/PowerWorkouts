@@ -6,11 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-//import java.security.Timestamp;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
@@ -35,14 +32,6 @@ public class PowerWorkoutControler
 
     @Autowired
     private userSessionDao UserSessionDao;
-
-    //static ArrayList<String> User = new ArrayList<>(); //probly dont need
-    //static ArrayList ExerciseIdList = new ArrayList(); //probly dont need
-    //static ArrayList curExerciesIds = new ArrayList(); //probly dont need
-    //static String workoutNameHolder = "";              //probly dont need
-    //static String workoutDiscriptionHolder = "";       //probly dont need
-    //static boolean hasBeenChecked = true;              //probly dont need
-    //static String createWorkoutDescriptionHolder = ""; //probly dont need
 
     static int IPWorkoutId = 0;
 
@@ -76,30 +65,11 @@ public class PowerWorkoutControler
         model.addAttribute("userName", userLogedIn);
         model.addAttribute("title", "Power Workouts");
 
-        //Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-
-        Date date = new Date();
-        Timestamp timestamp = new  Timestamp(date.getTime());
-        System.out.println(timestamp.toString());
-
-
-        //System.out.println("Date time: ");
-        //System.out.println(timestamp);
-        //System.out.println("Date time string: ");
-
-
-
-
-
-
-
         return "PowerWorkouts/index";
     }
 
     //.......................................................
     //.......................................................
-
-
 
 
 
@@ -113,12 +83,13 @@ public class PowerWorkoutControler
         model.addAttribute("User", usersDao.findAll());
         model.addAttribute("title", "Registration");
         model.addAttribute("nameHolder", registrationNameHolder);
-
         model.addAttribute("error", registrationError);
         model.addAttribute("errorPass", registrationPasswordError);
 
         return "PowerWorkouts/register";
     }
+
+
 
     @RequestMapping(value="register", method = RequestMethod.POST)
     public String registerForm(@RequestParam String userName, @RequestParam String password, @RequestParam String confirmPassword)
@@ -192,17 +163,16 @@ public class PowerWorkoutControler
 
 
 
-
-
     @RequestMapping(value="login", method = RequestMethod.GET)
     public String login(Model model, HttpSession session)
     {
         model.addAttribute("title", "Login");
         model.addAttribute("error", loginError);
 
-
         return "PowerWorkouts/login";
     }
+
+
 
     @RequestMapping(value="login", method = RequestMethod.POST)
     public String login(@RequestParam String userName, @RequestParam String password)
@@ -221,7 +191,6 @@ public class PowerWorkoutControler
         Iterator<Users> it = usersDao.findByuserName(userName).iterator();
         while ( it.hasNext() ) {
             Users u = it.next();
-            //System.out.println(u.getUserName());
 
             if(u.getUserName().matches(userName))
             {
@@ -257,7 +226,6 @@ public class PowerWorkoutControler
 
         Date date = new Date();
         Timestamp timestamp = new  Timestamp(date.getTime());
-        //System.out.println(timestamp.toString());
 
         String UPH = userName + password;
         userSession tmpUS = new userSession();
@@ -266,10 +234,7 @@ public class PowerWorkoutControler
         tmpUS.setValidSession(true);
         tmpUS.setUserLogTime(timestamp.toString());
 
-        //System.out.println("tmpUS: " + tmpUS.isValidSession());
-
         UserSessionDao.save(tmpUS);
-
 
         Iterator<userSession> it3 = UserSessionDao.findByuserNameSession(userName) .iterator();
         while ( it3.hasNext() ) {
@@ -281,7 +246,6 @@ public class PowerWorkoutControler
                 userLogedIn = userName;
             }
         }
-
 
         return "redirect:/PowerWorkouts/workouts";
     }
@@ -340,6 +304,8 @@ public class PowerWorkoutControler
 
         return "/PowerWorkouts/exerciseList";
     }
+
+
 
     @RequestMapping(value="exerciseList", method = RequestMethod.POST)
     public String exerciseListPost(@RequestParam String exerciseName, @RequestParam String description)//@ModelAttribute Exercises newExercise
@@ -424,8 +390,6 @@ public class PowerWorkoutControler
 
 
 
-
-
     //.........Controller for Workouts template ........................................
     //..................................................................................
 
@@ -444,8 +408,6 @@ public class PowerWorkoutControler
         model.addAttribute("createWorkoutNameError", createWorkoutNameError);
         model.addAttribute("createWorkoutDescriptionError", createWorkoutDescriptionError);
         model.addAttribute("createWorkoutNameHolder", createWorkoutNameHolder);
-
-
 
         return "PowerWorkouts/workouts";
     }
@@ -467,8 +429,6 @@ public class PowerWorkoutControler
             createWorkoutDescriptionError = "Workout Must have a Description";
             return "redirect:/PowerWorkouts/workouts";
         }
-
-
 
         Workouts tmpWO = new Workouts();
         tmpWO.setWorkoutName(workoutName);
@@ -552,13 +512,11 @@ public class PowerWorkoutControler
         int RepsInt = Integer.parseInt(reps);
 
         WorkoutInfo tmpWI = new WorkoutInfo();
-
         tmpWI.setWorkoutId(IPWorkoutId);
         tmpWI.setExerciseId(example);
         tmpWI.setSets(SetsInt);
         tmpWI.setReps(RepsInt);
         tmpWI.setExerciseName(exercisesDao.findById(example).get().getExerciseName());
-
         workoutInfoDao.save(tmpWI);
 
         editWorkoutSetsError = "";
@@ -566,8 +524,6 @@ public class PowerWorkoutControler
 
         return "redirect:/PowerWorkouts/editWorkout";
     }
-
-
 
 
 
@@ -595,6 +551,7 @@ public class PowerWorkoutControler
 
         return excs;
     }
+
 
 
     ArrayList<WorkoutInfo> getSetsAndRepsByWorkoutID (int WidSR)

@@ -16,19 +16,15 @@ public class WorkoutInfo {
     private String exerciseName;
     private int sets;
     private int reps;
-    //private int order;
 
 
-
-    public WorkoutInfo(int workoutId, int exerciseId, int sets, int reps,  String exerciseName)//, int order
+    public WorkoutInfo(int workoutId, int exerciseId, int sets, int reps,  String exerciseName)
     {
         this.workoutId = workoutId;
         this.exerciseId = exerciseId;
         this.sets = sets;
         this.reps = reps;
         this.exerciseName = exerciseName;
-        //this.order = order;
-
     }
 
     public WorkoutInfo()
@@ -78,14 +74,5 @@ public class WorkoutInfo {
     public void setExerciseName(String exerciseName) {
         this.exerciseName = exerciseName;
     }
-    /*
-    public int getOrder() {
-        return order;
-    }
-
-    public void setOrder(int order) {
-        this.order = order;
-    }
-    */
 
 }
